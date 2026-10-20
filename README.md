@@ -32,12 +32,12 @@ A portable self-contained proof of concept featuring several Seeedstudio industr
 
 | # | Part | Role in the kit | Price |
 |---|------|-----------------|------:|
-| 1 | SenseCAP M1 | LoRaWAN gateway running ChirpStack Gateway OS | 200 € |
-| 2 | SenseCAP S2103 | LoRaWAN CO₂, temperature & humidity sensor | 135 € |
-| 3 | SenseCAP S2100 Data Logger (DTU) | LoRaWAN node that reads the leaf sensor over RS485 | 70 € |
-| 4 | Seeed Studio Leaf Wetness & Temperature Sensor (S-YM-01) | Leaf wetness and leaf temperature, RS485 Modbus | 95 € |
-| 5 | reTerminal | Node-RED, full-screen dashboard, forwarding to Microeden | 300 € |
-| 6 | GL.iNet Mango (GL-MT300N-V2) | Travel router, private LAN + internet via Wi-Fi | 30 € |
+| 1 | [SenseCAP M1](https://www.seeedstudio.com/SenseCAP-M1-LoRaWAN-Indoor-Gateway-EU868-p-5022.html) | LoRaWAN gateway running ChirpStack Gateway OS | 200 € |
+| 2 | [SenseCAP S2103](https://www.seeedstudio.com/SenseCAP-S2103-LoRaWAN-CO2-Temperature-and-Humidity-Sensor-p-5356.html) | LoRaWAN CO₂, temperature & humidity sensor | 135 € |
+| 3 | [SenseCAP S2100 Data Logger (DTU)](https://www.seeedstudio.com/SenseCAP-S2100-LoRaWAN-Data-Logger-p-5361.html) | LoRaWAN node that reads the leaf sensor over RS485 | 70 € |
+| 4 | [Seeed Studio Leaf Wetness & Temperature Sensor (S-YM-01)](https://www.seeedstudio.com/leaf-wetness-sensor-p-a-4861.html) | Leaf wetness and leaf temperature, RS485 Modbus | 95 € |
+| 5 | [reTerminal](https://www.seeedstudio.com/ReTerminal-with-CM4-p-4904.html) | Node-RED, full-screen dashboard, forwarding to Microeden | 300 € |
+| 6 | [GL.iNet Mango (GL-MT300N-V2)](https://www.gl-inet.com/en-de/products/gl-mt300n-v2) | Travel router, private LAN + internet via Wi-Fi | 30 € |
 | 7 | Cables & plugs | Ethernet, power, wiring | 20 € |
 | 8 | Rugged case | Transport and field protection | 80 € |
 |   | **Total** | | **930 €** |
