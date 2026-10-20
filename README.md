@@ -21,7 +21,7 @@ A portable self-contained proof of concept featuring several Seeedstudio industr
 
 ## The main concept
 
-![](img\design.png)
+![](img/design.png)
 
 
 ---
