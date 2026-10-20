@@ -28,7 +28,7 @@ A portable self-contained proof of concept featuring several Seeedstudio industr
 
 ## Part List
 
-![](img\part.png)
+![](img/part.png)
 
 | # | Part | Role in the kit | Price |
 |---|------|-----------------|------:|
@@ -48,7 +48,7 @@ A portable self-contained proof of concept featuring several Seeedstudio industr
 
 When designing something to be broght or installed around - always start from the power supply!  In this case it's the cursed italian standard, aka Type L
 
-![](img\sockets.png)
+![](img/sockets.png)
 
 ---
 
@@ -56,7 +56,7 @@ When designing something to be broght or installed around - always start from th
 
 The Mango (GL-MT300N-V2) creates a private LAN for the gateway and the reTerminal, and takes its internet connection from any available 2.4 GHz Wi-Fi network.
 
-![](img\mango.png)
+![](img/mango.png)
 
 Skip to 2.3 if it's a new one
 
@@ -122,7 +122,7 @@ To keep the gateway and the reTerminal on fixed addresses across reboots, reserv
 
 The SenseCAP M1 is a Raspberry Pi 4B with a **WM1302** LoRa concentrator. We replaced its original Helium firmware with **ChirpStack Gateway OS** (OpenWrt based).
 
-![](img\sensecap-m1.jpg)
+![](img/sensecap-m1.jpg)
 
 ### 3.1 Image
 
@@ -134,7 +134,7 @@ The SenseCAP M1 is a Raspberry Pi 4B with a **WM1302** LoRa concentrator. We rep
 
 Burn the image with your favourite tool (Raspberry Pi Imager will do) and insert the card in the opening side of the case as shown 
 
-![](img\m1.png)
+![](img/m1.png)
 
 ### 3.3 First configuration
 
@@ -190,9 +190,9 @@ Press **Send**, then check *Device → LoRaWAN frames* in ChirpStack: you should
 
 Connected through the **SenseCAP S2100 Data Logger**, which polls the sensor over RS485 Modbus and sends the values over LoRaWAN.
 
-![](img\leaf02.png)
+![](img/leaf02.png)
 
-![](img\leaf03.png)
+![](img/leaf03.png)
 
 **Wiring:** Red = V+ (3.6–30 V DC), Black = GND, Yellow = RS485 A/+, White = RS485 B/−, Green = SET (leave unconnected for normal use).
 
@@ -224,7 +224,7 @@ The reTerminal (Raspberry Pi CM4, Raspberry Pi OS **Bookworm**, **labwc** Waylan
 
 Download the latest version in /code
 
-![](img\node-red.png)
+![](img/node-red.png)
 
 
 ```
