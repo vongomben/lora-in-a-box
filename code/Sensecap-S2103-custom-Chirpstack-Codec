@@ -1,0 +1,27 @@
+function decodeUplink(input) {
+  var b = input.bytes;
+  var nomi = {
+    4097: "temperatura_C",
+    4098: "umidita_pct",
+    4100: "co2_ppm"
+  };
+
+  // misure: fPort 2, blocchi da 7 byte (canale, id, valore x1000) + 2 byte di CRC
+  if (input.fPort !== 2 || b.length < 9 || (b.length - 2) % 7 !== 0) {
+    return { data: { raw: bytesToHex(b), fPort: input.fPort } };
+  }
+
+  var data = {};
+  for (var i = 0; i + 7 <= b.length - 2; i += 7) {
+    var id = b[i + 1] | (b[i + 2] << 8);
+    var val = (b[i + 3] | (b[i + 4] << 8) | (b[i + 5] << 16) | (b[i + 6] << 24)) / 1000;
+    data[nomi[id] || ("id_" + id)] = val;
+  }
+  return { data: data };
+}
+
+function bytesToHex(b) {
+  var s = "";
+  for (var i = 0; i < b.length; i++) s += ("0" + b[i].toString(16)).slice(-2);
+  return s;
+}

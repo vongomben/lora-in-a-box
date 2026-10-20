@@ -1,0 +1,718 @@
+[
+    {
+        "id": "f82e94a667014192",
+        "type": "ui-chart",
+        "z": "6282cda0d727e308",
+        "group": "b24ef80495fe5da5",
+        "name": "",
+        "label": "chart",
+        "order": 1,
+        "chartType": "area",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "timestamp",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "cross",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "17",
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1230,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "047198d55f5108d6",
+        "type": "debug",
+        "z": "6282cda0d727e308",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "389a96e2fed7a96a",
+        "type": "mqtt in",
+        "z": "6282cda0d727e308",
+        "name": "",
+        "topic": "application/+/device/+/event/up",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "b1",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 290,
+        "y": 520,
+        "wires": [
+            [
+                "047198d55f5108d6",
+                "d3f7fb403f81d97e",
+                "fb680357f756b23c"
+            ]
+        ]
+    },
+    {
+        "id": "2526616f4fbaca97",
+        "type": "change",
+        "z": "6282cda0d727e308",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.object.messages[0][0].measurementValue",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Leaf Temp",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 440,
+        "wires": [
+            [
+                "7e92a39f8a7c889a"
+            ]
+        ]
+    },
+    {
+        "id": "420931e6feb68892",
+        "type": "change",
+        "z": "6282cda0d727e308",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.object.messages[0][1].measurementValue",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Leaf Humidity",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 480,
+        "wires": [
+            [
+                "7e92a39f8a7c889a"
+            ]
+        ]
+    },
+    {
+        "id": "6c7e323b721c1185",
+        "type": "change",
+        "z": "6282cda0d727e308",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.object.umidita_pct",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Humidity",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 520,
+        "wires": [
+            [
+                "7e92a39f8a7c889a"
+            ]
+        ]
+    },
+    {
+        "id": "4a0eba1337c0f5fc",
+        "type": "change",
+        "z": "6282cda0d727e308",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.object.temperatura_C",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Air Temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 560,
+        "wires": [
+            [
+                "7e92a39f8a7c889a"
+            ]
+        ]
+    },
+    {
+        "id": "4e4c3724843bc605",
+        "type": "change",
+        "z": "6282cda0d727e308",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.object.co2_ppm",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "CO2 PPM",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 600,
+        "wires": [
+            [
+                "7e92a39f8a7c889a"
+            ]
+        ]
+    },
+    {
+        "id": "a1f0c0de00000001",
+        "type": "function",
+        "z": "6282cda0d727e308",
+        "name": "timestamp + filtro + log",
+        "func": "// scarta valori mancanti (es. uplink di un altro device)\nif (typeof msg.payload !== 'number') return null;\nmsg.timestamp = Date.now();\nconst riga = { payload: JSON.stringify({ t: msg.timestamp, topic: msg.topic, v: msg.payload }) };\nreturn [msg, riga];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 460,
+        "wires": [
+            [
+                "f82e94a667014192",
+                "121745222316d947"
+            ],
+            [
+                "a1f0c0de00000002"
+            ]
+        ]
+    },
+    {
+        "id": "a1f0c0de00000002",
+        "type": "file",
+        "z": "6282cda0d727e308",
+        "name": "save to file",
+        "filename": "/home/pi/db-01/lora-expo-log.jsonl",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1230,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1f0c0de00000003",
+        "type": "inject",
+        "z": "6282cda0d727e308",
+        "name": "on start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 640,
+        "y": 740,
+        "wires": [
+            [
+                "a1f0c0de00000004"
+            ]
+        ]
+    },
+    {
+        "id": "a1f0c0de00000004",
+        "type": "file in",
+        "z": "6282cda0d727e308",
+        "name": "read file",
+        "filename": "/home/pi/db-01/lora-expo-log.jsonl",
+        "filenameType": "str",
+        "format": "lines",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 820,
+        "y": 740,
+        "wires": [
+            [
+                "a1f0c0de00000005"
+            ]
+        ]
+    },
+    {
+        "id": "a1f0c0de00000005",
+        "type": "function",
+        "z": "6282cda0d727e308",
+        "name": "rebuild points & data ",
+        "func": "let d;\ntry { d = JSON.parse(msg.payload); } catch (e) { return null; }\n// il grafico tiene solo l'ultima ora: inutile reinviare dati più vecchi\nif (Date.now() - d.t > 3600 * 1000) return null;\nreturn { topic: d.topic, payload: d.v, timestamp: d.t };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 740,
+        "wires": [
+            [
+                "f82e94a667014192"
+            ]
+        ]
+    },
+    {
+        "id": "fcdfd5bc4d633548",
+        "type": "mqtt out",
+        "z": "6282cda0d727e308",
+        "name": "Microeden OUT",
+        "topic": "to-be.imported",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 1040,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e6e2e7ca77a180fa",
+        "type": "inject",
+        "z": "6282cda0d727e308",
+        "name": "test",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"temperatura\": 21.5}",
+        "payloadType": "json",
+        "x": 790,
+        "y": 320,
+        "wires": [
+            [
+                "fcdfd5bc4d633548"
+            ]
+        ]
+    },
+    {
+        "id": "121745222316d947",
+        "type": "debug",
+        "z": "6282cda0d727e308",
+        "name": "debug 24",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "fb680357f756b23c",
+        "type": "function",
+        "z": "6282cda0d727e308",
+        "name": "function 3",
+        "func": "const o = (msg.payload && msg.payload.object) || {};\n\n// Sensore CO2 / temperatura / umidità (S2103, codec custom)\nif (o.temperatura_C !== undefined || o.co2_ppm !== undefined) {\n    msg.payload = {\n        temperatura: o.temperatura_C,\n        umidita: o.umidita_pct,\n        co2: o.co2_ppm\n    };\n    return msg;\n}\n\n// Leafometer (S2100, codec ufficiale SenseCAP)\nif (Array.isArray(o.messages) && o.valid !== false) {\n    const misure = o.messages.flat().filter(m => m.type === \"Measurement\");\n    const out = {};\n    for (const m of misure) {\n        if (m.measurementId === 1) out.temperatura_foglia = m.measurementValue;\n        if (m.measurementId === 2) out.umidita_foglia = m.measurementValue;\n    }\n    if (Object.keys(out).length > 0) {\n        msg.payload = out;\n        return msg;\n    }\n}\n\n// tutto il resto (pacchetti informativi, errori) viene scartato\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 260,
+        "wires": [
+            [
+                "fcdfd5bc4d633548",
+                "85862ce8aa4ee6e6"
+            ]
+        ]
+    },
+    {
+        "id": "85862ce8aa4ee6e6",
+        "type": "debug",
+        "z": "6282cda0d727e308",
+        "name": "debug 26",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a8845c7e92baec3d",
+        "type": "inject",
+        "z": "6282cda0d727e308",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"deduplicationId\":\"a92659cf-6aa9-494d-b7a4-c51990f700ac\",\"time\":\"2026-10-08T11:21:12.103562088+00:00\",\"deviceInfo\":{\"tenantId\":\"52f14cd4-c6f1-4fbd-8f87-4025e1d49242\",\"tenantName\":\"ChirpStack\",\"applicationId\":\"de30b245-cbd5-4e0e-8b63-bf18c5dc78df\",\"applicationName\":\"Leafometer\",\"deviceProfileId\":\"ba693c9c-b9da-467a-877b-cccb3e380e1e\",\"deviceProfileName\":\"SenseCAP S2100\",\"deviceName\":\"Leafometer\",\"devEui\":\"7df23155c4e4c378\",\"deviceClassEnabled\":\"CLASS_A\",\"tags\":{}},\"devAddr\":\"0168535c\",\"adr\":true,\"dr\":5,\"fCnt\":2595,\"fPort\":3,\"confirmed\":false,\"data\":\"MRIBAABa5gAABLA=\",\"object\":{\"messages\":[[{\"measurementId\":1,\"type\":\"Measurement\",\"measurementValue\":23.27},{\"measurementId\":2,\"type\":\"Measurement\",\"measurementValue\":1.2}]],\"payload\":\"31120100005AE6000004B0\",\"err\":0,\"valid\":true},\"rxInfo\":[{\"gatewayId\":\"0016c001ff164c5a\",\"uplinkId\":3996954233,\"nsTime\":\"2026-10-08T11:21:11.864150606+00:00\",\"rssi\":-73,\"snr\":13.5,\"channel\":7,\"location\":{},\"context\":\"BummLQ==\",\"crcStatus\":\"CRC_OK\"}],\"txInfo\":{\"frequency\":867900000,\"modulation\":{\"lora\":{\"bandwidth\":125000,\"spreadingFactor\":7,\"codeRate\":\"CR_4_5\"}}},\"regionConfigId\":\"eu868\"}",
+        "payloadType": "json",
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "fb680357f756b23c"
+            ]
+        ]
+    },
+    {
+        "id": "d7bdd2b476cbbc41",
+        "type": "comment",
+        "z": "6282cda0d727e308",
+        "name": "send data to microeden",
+        "info": "",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "50af26327f90ab7b",
+        "type": "comment",
+        "z": "6282cda0d727e308",
+        "name": "extract data and visualize it locally",
+        "info": "",
+        "x": 280,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d9fbd6acb5a26d84",
+        "type": "comment",
+        "z": "6282cda0d727e308",
+        "name": "TODO: save and reload locally previous data ",
+        "info": "",
+        "x": 770,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9122e9c9b5a4e07c",
+        "type": "inject",
+        "z": "6282cda0d727e308",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"deduplicationId\":\"f00851ca-896e-42c3-84dc-add25e3c19b5\",\"time\":\"2026-10-08T11:16:42.957998312+00:00\",\"deviceInfo\":{\"tenantId\":\"52f14cd4-c6f1-4fbd-8f87-4025e1d49242\",\"tenantName\":\"ChirpStack\",\"applicationId\":\"de30b245-cbd5-4e0e-8b63-bf18c5dc78df\",\"applicationName\":\"Leafometer\",\"deviceProfileId\":\"1f9a1553-b1c4-4abd-b2bb-82e9cc1ac3e9\",\"deviceProfileName\":\"SenseCAP S2103 (custom)\",\"deviceName\":\"Co2 Temperature and Humidity Sensor\",\"devEui\":\"7cf22145b4f3c367\",\"deviceClassEnabled\":\"CLASS_A\",\"tags\":{}},\"devAddr\":\"01e199bc\",\"adr\":true,\"dr\":5,\"fCnt\":5,\"fPort\":2,\"confirmed\":false,\"data\":\"AQEQkFsAAAECEATYAAABBBBgQwcAswU=\",\"object\":{\"temperatura_C\":23.44,\"umidita_pct\":55.3,\"co2_ppm\":476},\"rxInfo\":[{\"gatewayId\":\"0016c001ff164c5a\",\"uplinkId\":1228729183,\"nsTime\":\"2026-10-08T11:16:42.717800507+00:00\",\"rssi\":-82,\"snr\":13.5,\"rfChain\":1,\"location\":{},\"context\":\"9t7j0w==\",\"crcStatus\":\"CRC_OK\"}],\"txInfo\":{\"frequency\":868100000,\"modulation\":{\"lora\":{\"bandwidth\":125000,\"spreadingFactor\":7,\"codeRate\":\"CR_4_5\"}}},\"regionConfigId\":\"eu868\"}",
+        "payloadType": "json",
+        "x": 470,
+        "y": 320,
+        "wires": [
+            [
+                "fb680357f756b23c"
+            ]
+        ]
+    },
+    {
+        "id": "d3f7fb403f81d97e",
+        "type": "junction",
+        "z": "6282cda0d727e308",
+        "x": 500,
+        "y": 520,
+        "wires": [
+            [
+                "2526616f4fbaca97",
+                "420931e6feb68892",
+                "6c7e323b721c1185",
+                "4a0eba1337c0f5fc",
+                "4e4c3724843bc605"
+            ]
+        ]
+    },
+    {
+        "id": "7e92a39f8a7c889a",
+        "type": "junction",
+        "z": "6282cda0d727e308",
+        "x": 860,
+        "y": 520,
+        "wires": [
+            [
+                "a1f0c0de00000001"
+            ]
+        ]
+    },
+    {
+        "id": "b24ef80495fe5da5",
+        "type": "ui-group",
+        "name": "Data",
+        "page": "de6de43ddb59b537",
+        "width": "17",
+        "height": "11",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "b1",
+        "type": "mqtt-broker",
+        "name": "LoRa-expo",
+        "broker": "192.168.7.180",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "de6de43ddb59b537",
+        "type": "ui-page",
+        "name": "Local to Microeden",
+        "ui": "52dfdd07b7d76b83",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "9efd82abbac8412f",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "52dfdd07b7d76b83",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "9efd82abbac8412f",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "37aa05a257c7102c",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.32.0"
+        }
+    }
+]
