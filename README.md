@@ -397,7 +397,7 @@ To test the reload: wait for a few uplinks, restart Node-RED (`node-red-restart`
 
 ## Setting up [Microeden](https://microeden.io/) 
 
-#### Creat an account, an ge the credentials
+#### Creat an account, an get the credentials
 
 After you [created an account](https://microeden.io/uid/) and setup an MQTT source, save the credentitials and create a MQTT broker / MQTT out on the Node-RED instance on the reTerminal as follows
 
