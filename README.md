@@ -395,7 +395,21 @@ To test the reload: wait for a few uplinks, restart Node-RED (`node-red-restart`
 
 
 
+## Setting up Microeden 
 
+#### Creat an account, an ge the credentials
+
+After you created an account and setup an MQTT source, save the credentitials and create a MQTT broker / MQTT out on the Node-RED instance on the reTerminal as follows
+
+![](img/eden_1.png)
+
+Later, you'll be able to visualize and recall each data sent if you specify your topic as "parola chiave", italian for Keyword
+
+![](img/eden_2.png)
+
+Will keep updating theids guide
+
+Happy Monitoring!
 
 ---
 
