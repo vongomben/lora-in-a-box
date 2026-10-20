@@ -4,7 +4,7 @@ A portable self-contained proof of concept featuring several Seeedstudio industr
 - **GL.iNet Mango** travel router as the network backbone
 - **SenseCAP M1** gateway running **ChirpStack Gateway OS** (gateway + network server + MQTT broker in one box)
 - **SenseCAP sensor nodes** joined via OTAA (e.g. a leaf wetness & temperature sensor for downy mildew monitoring)
-- **reTerminal** running **Node-RED**: reads data from ChirpStack, shows it full screen, forwards it to **Microeden** over MQTT
+- **reTerminal** running **Node-RED**: reads data from ChirpStack, shows it full screen, forwards it to **[Microeden](https://microeden.io/)** over MQTT
 - **Microeden** a very interesting adn cheap italian tool for visualising data and creating automation with a free tier
 
 ```
@@ -395,11 +395,11 @@ To test the reload: wait for a few uplinks, restart Node-RED (`node-red-restart`
 
 
 
-## Setting up Microeden 
+## Setting up [Microeden](https://microeden.io/) 
 
 #### Creat an account, an ge the credentials
 
-After you created an account and setup an MQTT source, save the credentitials and create a MQTT broker / MQTT out on the Node-RED instance on the reTerminal as follows
+After you [created an account](https://microeden.io/uid/) and setup an MQTT source, save the credentitials and create a MQTT broker / MQTT out on the Node-RED instance on the reTerminal as follows
 
 ![](img/eden_1.png)
 
